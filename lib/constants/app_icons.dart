@@ -10,52 +10,52 @@ class AppIcons {
 
   static Container slider = Container(
     child: Image.asset('assets/icons/slider_icon.png'),
-    height: 30.0,
+    height: 27.0,
   );
 
   static Container search = Container(
     child: Image.asset('assets/icons/search_icon.png'),
-    height: 18.0,
+    height: 21.0,
   );
 
   static Container percent = Container(
     child: Image.asset('assets/icons/percent_icon.png'),
-    height: 55.0,
+    height: 28.0,
   );
 
   static Container customer = Container(
     child: Image.asset('assets/icons/customer_icon.png'),
-    height: 55.0,
+    height: 25.0,
   );
 
   static Container products = Container(
     child: Image.asset('assets/icons/products_icon.png'),
-    height: 55.0,
+    height: 23.0,
   );
 
   static Container revenue = Container(
     child: Image.asset('assets/icons/revenue_icon.png'),
-    height: 55.0,
+    height: 26.0,
   );
 
   static Container home = Container(
     child: Image.asset('assets/icons/home_icon.png'),
-    height: 55.0,
+    height: 25.0,
   );
 
   static Container wallet = Container(
     child: Image.asset('assets/icons/wallet_icon.png'),
-    height: 55.0,
+    height: 22.0,
   );
 
   static Container chart = Container(
     child: Image.asset('assets/icons/chart_icon.png'),
-    height: 55.0,
+    height: 23.0,
   );
 
   static Container account = Container(
     child: Image.asset('assets/icons/account_icon.png'),
-    height: 55.0,
+    height: 25.0,
   );
 
   static const Icon down = Icon(

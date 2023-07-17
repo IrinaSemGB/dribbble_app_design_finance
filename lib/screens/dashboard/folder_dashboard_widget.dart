@@ -12,40 +12,41 @@ class FolderDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      height: width * 2.75,
+      height: width * 2.65,
       padding: EdgeInsets.all(15.0),
       child: CustomPaint(
         painter: FilesFolder(color: folder.color),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          padding: EdgeInsets.only(left: 20.0, right: 40.0, top: 20.0, bottom: 20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                width: 70.0,
-                height: 70.0,
+                width: width * 0.7,
+                height: width * 0.7,
                 decoration: BoxDecoration(
                   color: AppColors.black,
-                  borderRadius: BorderRadius.circular(70.0),
+                  borderRadius: BorderRadius.circular(width * 0.7),
                 ),
-                child: Padding(
-                  padding: EdgeInsets.all(18.0),
-                  child: folder.icon,
-                ),
+                child: Center(child: folder.icon),
               ),
               Container(
                 padding: EdgeInsets.all(10.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      folder.currentValue,
-                      style: Theme.of(context).textTheme.titleLarge,
+                    FittedBox(
+                      child: Text(
+                        folder.currentValue,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
                     ),
-                    Text(
-                      folder.title,
-                      style: Theme.of(context).textTheme.bodyMedium?.apply(color: AppColors.black),
+                    FittedBox(
+                      child: Text(
+                        folder.title,
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
                     ),
                   ],
                 ),

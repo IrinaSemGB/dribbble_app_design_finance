@@ -12,7 +12,7 @@ class DashboardHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height * 0.16,
+      height: height * 0.165,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -26,14 +26,17 @@ class DashboardHeader extends StatelessWidget {
                     AppTitles.greetingTitle,
                     style: Theme.of(context).textTheme.headlineLarge,
                   ),
-                  SizedBox(height: 13.0),
+                  SizedBox(height: 12.0),
                   Text(
                     AppTitles.greetingSubtitle,
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ],
               ),
-              IconButton(onPressed: () {}, icon: AppIcons.slider),
+              IconButton(
+                onPressed: () {},
+                icon: AppIcons.slider
+              ),
             ],
           ),
           TextField(
@@ -51,13 +54,13 @@ class DashboardHeader extends StatelessWidget {
               hintText: AppTitles.search,
               hintStyle: Theme.of(context).textTheme.bodyMedium,
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(15.0),
               ),
               suffixIcon: Padding(
-                padding: EdgeInsets.only(top: 15.0, bottom: 15.0, left: 15.0, right: 20.0),
+                padding: EdgeInsets.only(top: 15.0, bottom: 15.0, left: 15.0, right: 25.0),
                 child: AppIcons.search,
               ),
-              contentPadding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 18.0),
             ),
           ),
         ],

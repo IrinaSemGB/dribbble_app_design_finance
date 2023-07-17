@@ -6,11 +6,13 @@ class DashboardTable extends StatelessWidget {
 
   final double width;
   final List<Folder> folders;
+  final bool visible;
 
   const DashboardTable({
     super.key,
     required this.width,
     required this.folders,
+    this.visible = false,
   });
 
   @override
@@ -22,15 +24,21 @@ class DashboardTable extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  child: FolderDashboard(
-                    width: width * 0.2,
-                    folder: folders[0],
+                  child: Visibility(
+                    visible: !visible,
+                    child: FolderDashboard(
+                      width: width * 0.2,
+                      folder: folders[0],
+                    ),
                   ),
                 ),
                 Expanded(
-                  child: FolderDashboard(
-                    width: width * 0.2,
-                    folder: folders[1],
+                  child: Visibility(
+                    visible: !visible,
+                    child: FolderDashboard(
+                      width: width * 0.2,
+                      folder: folders[1],
+                    ),
                   ),
                 ),
               ],
@@ -40,14 +48,20 @@ class DashboardTable extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                    child: FolderDashboard(
-                      width: width * 0.2,
-                      folder: folders[2],
+                    child: Visibility(
+                      visible: !visible,
+                      child: FolderDashboard(
+                        width: width * 0.2,
+                        folder: folders[2],
+                      ),
                     )),
                 Expanded(
-                  child: FolderDashboard(
-                    width: width * 0.2,
-                    folder: folders[3],
+                  child: Visibility(
+                    visible: !visible,
+                    child: FolderDashboard(
+                      width: width * 0.2,
+                      folder: folders[3],
+                    ),
                   ),
                 ),
               ],

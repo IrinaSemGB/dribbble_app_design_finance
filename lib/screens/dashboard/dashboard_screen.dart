@@ -9,13 +9,14 @@ import 'dashboard_table_widget.dart';
 
 
 class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
     final Size screenSize = MediaQuery.of(context).size;
-    
+
+    bool isKeyboard = MediaQuery.of(context).viewInsets.bottom != 0;
+
     final List<Folder> folders = [
       Folder(color: AppColors.yellow, title: 'Sales', icon: AppIcons.percent, currentValue: '230k'),
       Folder(color: AppColors.green, title: 'Customers', icon: AppIcons.customer, currentValue: '8.549k'),
@@ -26,22 +27,35 @@ class DashboardScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.black,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 40.0),
+        padding: EdgeInsets.only(left: 30.0, right: 30.0, top: 20.0, bottom: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Column(
               children: [
                 CustomAppBar(height: screenSize.height),
-                SizedBox(height: 20.0),
+                SizedBox(height: screenSize.height * 0.035),
                 DashboardHeader(height: screenSize.height),
-                SizedBox(height: 10.0),
+                SizedBox(height: screenSize.height * 0.04),
               ],
             ),
             Expanded(
-              child: DashboardTable(width: screenSize.width, folders: folders),
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 700),
+                height: isKeyboard ? 0.0 : screenSize.height * 0.6,
+                child: DashboardTable(
+                  width: screenSize.width,
+                  folders: folders,
+                  visible: isKeyboard,
+                ),
+              ),
             ),
-            CustomTabBar(),
+            SizedBox(height: screenSize.height * 0.03),
+            AnimatedContainer(
+              height: isKeyboard ? 0.0 : 60,
+              duration: Duration(milliseconds: 500),
+              child: CustomTabBar(height: screenSize.height),
+            ),
           ],
         ),
       ),
