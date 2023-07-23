@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../constants/app_colors.dart';
-import '../../models/folder_model.dart';
+import '../../../constants/app_colors.dart';
+import '../../../models/folder_model.dart';
 
 class FolderDashboard extends StatelessWidget {
 

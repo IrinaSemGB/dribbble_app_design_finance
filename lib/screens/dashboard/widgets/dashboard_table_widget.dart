@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import '../../models/folder_model.dart';
+import '../../../models/folder_model.dart';
 import 'folder_dashboard_widget.dart';
 
 class DashboardTable extends StatelessWidget {

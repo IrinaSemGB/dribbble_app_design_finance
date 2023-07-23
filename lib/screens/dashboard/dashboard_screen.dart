@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import '../../common_widgets/custom_app_bar.dart';
 import '../../common_widgets/custom_tab_bar.dart';
 import '../../constants/app_colors.dart';
-import 'dashboard_header_widget.dart';
-import 'dashboard_table_widget.dart';
+import 'widgets/dashboard_header_widget.dart';
+import 'widgets/dashboard_table_widget.dart';
 
 
 class DashboardScreen extends StatelessWidget {
