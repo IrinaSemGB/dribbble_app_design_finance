@@ -11,7 +11,7 @@ class CustomTabBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: height * 0.1,
-      padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
+      padding: EdgeInsets.symmetric(horizontal: 20.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

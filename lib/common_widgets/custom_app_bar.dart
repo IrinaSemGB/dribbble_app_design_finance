@@ -5,23 +5,27 @@ import '../constants/app_images.dart';
 
 class CustomAppBar extends StatelessWidget {
 
-  final double height;
-  CustomAppBar({super.key, required this.height});
+  final Size size;
+  CustomAppBar({super.key, required this.size});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height * 0.1,
+      height: size.height * 0.1,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(onPressed: () { }, icon: AppIcons.main),
           Container(
-            height: 55.0,
+            width: size.width * 0.07,
+            height: size.width * 0.07,
+            child: AppIcons.main,
+          ),
+          Container(
+            height: size.width * 0.12,
             child: Padding(
               padding: EdgeInsets.all(6.0),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(16.0),
+                borderRadius: BorderRadius.circular(size.width * 0.12 / 5),
                 child: Image.asset(AppImages.profile),
               ),
             ),
@@ -30,7 +34,7 @@ class CustomAppBar extends StatelessWidget {
                 width: 1.0,
                 color: AppColors.white,
               ),
-              borderRadius: BorderRadius.circular(20.0),
+              borderRadius: BorderRadius.circular(size.width * 0.12 / 4),
             ),
           ),
         ],

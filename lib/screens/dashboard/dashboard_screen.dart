@@ -27,14 +27,17 @@ class DashboardScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.black,
       body: Padding(
-        padding: EdgeInsets.only(left: 30.0, right: 30.0, top: 20.0, bottom: 20.0),
+        padding: EdgeInsets.symmetric(
+          horizontal: screenSize.width * 0.04,
+          vertical: screenSize.height * 0.03,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               children: [
-                CustomAppBar(height: screenSize.height),
-                SizedBox(height: screenSize.height * 0.035),
+                CustomAppBar(size: screenSize),
                 DashboardHeader(height: screenSize.height),
                 SizedBox(height: screenSize.height * 0.04),
               ],
@@ -42,7 +45,6 @@ class DashboardScreen extends StatelessWidget {
             Expanded(
               child: AnimatedContainer(
                 duration: Duration(milliseconds: 700),
-                height: isKeyboard ? 0.0 : screenSize.height * 0.6,
                 child: DashboardTable(
                   width: screenSize.width,
                   folders: folders,

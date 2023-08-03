@@ -6,13 +6,12 @@ import '../../../constants/app_titles.dart';
 class DashboardHeader extends StatelessWidget {
 
   final double height;
-
   const DashboardHeader({super.key, required this.height});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height * 0.165,
+      height: height * 0.2,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -24,12 +23,12 @@ class DashboardHeader extends StatelessWidget {
                 children: [
                   Text(
                     AppTitles.greetingTitle,
-                    style: Theme.of(context).textTheme.headlineLarge,
+                    style: Theme.of(context).textTheme.headlineLarge?.copyWith(fontSize: height * 0.042),
                   ),
-                  SizedBox(height: 12.0),
+                  SizedBox(height: height * 0.01),
                   Text(
                     AppTitles.greetingSubtitle,
-                    style: Theme.of(context).textTheme.headlineMedium,
+                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontSize: height * 0.022)
                   ),
                 ],
               ),
@@ -39,6 +38,7 @@ class DashboardHeader extends StatelessWidget {
               ),
             ],
           ),
+          // SizedBox(),
           TextField(
             style: Theme.of(context).textTheme.bodyMedium,
             cursorColor: AppColors.accent,
@@ -57,10 +57,10 @@ class DashboardHeader extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15.0),
               ),
               suffixIcon: Padding(
-                padding: EdgeInsets.only(top: 15.0, bottom: 15.0, left: 15.0, right: 25.0),
+                padding: EdgeInsets.only(top: height * 0.018, bottom: height * 0.018, right: 25.0),
                 child: AppIcons.search,
               ),
-              contentPadding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 18.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 30.0),
             ),
           ),
         ],

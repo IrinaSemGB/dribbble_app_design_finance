@@ -13,21 +13,21 @@ class FolderDashboard extends StatelessWidget {
     return Container(
       width: width,
       height: width * 2.65,
-      padding: EdgeInsets.all(15.0),
+      padding: EdgeInsets.all(width * 0.12),
       child: CustomPaint(
         painter: FilesFolder(color: folder.color),
         child: Padding(
-          padding: EdgeInsets.only(left: 20.0, right: 40.0, top: 20.0, bottom: 20.0),
+          padding: EdgeInsets.only(left: 20.0, top: 20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                width: width * 0.7,
-                height: width * 0.7,
+                width: width * 0.6,
+                height: width * 0.6,
                 decoration: BoxDecoration(
                   color: AppColors.black,
-                  borderRadius: BorderRadius.circular(width * 0.7),
+                  borderRadius: BorderRadius.circular(width * 0.6),
                 ),
                 child: Center(child: folder.icon),
               ),
@@ -36,17 +36,13 @@ class FolderDashboard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    FittedBox(
-                      child: Text(
-                        folder.currentValue,
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
+                    Text(
+                      folder.currentValue,
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: width * 0.3),
                     ),
-                    FittedBox(
-                      child: Text(
-                        folder.title,
-                        style: Theme.of(context).textTheme.bodyLarge,
-                      ),
+                    Text(
+                      folder.title,
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: width * 0.18),
                     ),
                   ],
                 ),

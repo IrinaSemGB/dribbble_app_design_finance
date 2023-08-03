@@ -32,6 +32,7 @@ class DashboardTable extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(width: width * 0.03),
                 Expanded(
                   child: Visibility(
                     visible: !visible,
@@ -48,13 +49,15 @@ class DashboardTable extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                    child: Visibility(
-                      visible: !visible,
-                      child: FolderDashboard(
-                        width: width * 0.2,
-                        folder: folders[2],
-                      ),
-                    )),
+                  child: Visibility(
+                    visible: !visible,
+                    child: FolderDashboard(
+                      width: width * 0.2,
+                      folder: folders[2],
+                    ),
+                  ),
+                ),
+                SizedBox(width: width * 0.03),
                 Expanded(
                   child: Visibility(
                     visible: !visible,
